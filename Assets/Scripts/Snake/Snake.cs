@@ -18,6 +18,7 @@ public class Snake : MonoBehaviour
     {
         _input = GetComponent<SnakeInput>();
         _tailGenerator = GetComponent<TailGenerator>();
+
         _tail = _tailGenerator.Generate();
     }
 
