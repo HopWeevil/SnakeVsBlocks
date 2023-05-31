@@ -2,8 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent (typeof(SnakeInput))]
-[RequireComponent (typeof(TailGenerator))]
+[RequireComponent(typeof(SnakeInput))]
+[RequireComponent(typeof(TailGenerator))]
 public class Snake : MonoBehaviour
 {
     [SerializeField] private SnakeHead _head;
@@ -14,12 +14,15 @@ public class Snake : MonoBehaviour
     private SnakeInput _input;
     private TailGenerator _tailGenerator;
 
+    public event UnityAction<int> SizeUpdated;
+
     private void Awake()
     {
         _input = GetComponent<SnakeInput>();
         _tailGenerator = GetComponent<TailGenerator>();
 
         _tail = _tailGenerator.Generate();
+        SizeUpdated?.Invoke(_tail.Count);
     }
 
     private void FixedUpdate()
