@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 202976669}
   m_Layer: 0
-  m_Name: WallSpawnPoint
+  m_Name: SpawnPoint7
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -164,7 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 307877972}
   m_Layer: 0
-  m_Name: WallSpawnPoint
+  m_Name: SpawnPoint8
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -197,7 +197,6 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
-  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -286,7 +285,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7347d07fd9dc55459495845807837ce, type: 3}
   m_Name: 
@@ -294,18 +293,6 @@ MonoBehaviour:
   _snakeHead: {fileID: 1289016941}
   _speed: 5
   _offsetY: 4
---- !u!114 &519420034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1544d0de24fcef43aa00864837b22e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &612466080
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,7 +303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 612466081}
   m_Layer: 0
-  m_Name: WallSpawnPoint
+  m_Name: SpawnPoint9
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -347,7 +334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 699806521}
   m_Layer: 0
-  m_Name: Container
+  m_Name: LevelContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -415,8 +402,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -513,7 +500,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1105657669}
   m_Layer: 0
-  m_Name: WallSpawnPoint
+  m_Name: SpawnPoint6
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -849,17 +836,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1756404226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c926c05ecfffca542916a655027e9793, type: 3}
+  m_Script: {fileID: 11500000, guid: 3fe70d1bab93cf04e9c8621fc6bc7207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelLenth: 10
+  _levelLenth: 7
+  _stageRepeatAmount: 5
   _container: {fileID: 699806521}
-  _distanceBetweenFullLine: 3
-  _distanceBetweenRandomLine: 4
-  _blockTemplate: {fileID: 167229839802853277, guid: e3c01acc1a92ed34ba7458874325a7f3, type: 3}
+  _blockTemplate: {fileID: 2929290526838153667, guid: e3c01acc1a92ed34ba7458874325a7f3, type: 3}
   _blockSpawnChance: 40
   _wallTemplate: {fileID: 9033438281560664281, guid: 9bd105e00c2a2c24a8722b4c02e66923, type: 3}
   _wallSpawnChance: 30
+  _wallMaxLenth: 2
   _bonusTemplate: {fileID: 3853515483715753026, guid: 4879e8ebda9aee749850ebf6aefe1a78, type: 3}
   _bonusSpawnChance: 15
   _blockSpawnPoints:
@@ -873,7 +860,12 @@ MonoBehaviour:
   - {fileID: 202976669}
   - {fileID: 307877972}
   - {fileID: 612466081}
-  _bonusSpawnPoints: []
+  _bonusSpawnPoints:
+  - {fileID: 5625117151105012806}
+  - {fileID: 5625117149409155813}
+  - {fileID: 5625117149465986527}
+  - {fileID: 5625117150028374349}
+  - {fileID: 5625117150688439558}
 --- !u!1 &1804267502
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,7 +953,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1815620487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1042,7 +1034,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5625117149465986527}
   m_Layer: 0
-  m_Name: BlockSpawnPoint
+  m_Name: SpawnPoint3
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1058,7 +1050,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5625117149409155813}
   m_Layer: 0
-  m_Name: BlockSpawnPoint
+  m_Name: SpawnPoint2
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1074,7 +1066,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5625117150028374349}
   m_Layer: 0
-  m_Name: BlockSpawnPoint
+  m_Name: SpawnPoint4
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1090,7 +1082,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5625117150688439558}
   m_Layer: 0
-  m_Name: BlockSpawnPoint
+  m_Name: SpawnPoint5
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1106,7 +1098,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5625117151105012806}
   m_Layer: 0
-  m_Name: BlockSpawnPoint
+  m_Name: SpawnPoint1
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
