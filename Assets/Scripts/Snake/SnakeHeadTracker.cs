@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnakeTrcaker : MonoBehaviour
+public class SnakeHeadTracker : MonoBehaviour
 {
     [SerializeField] private SnakeHead _snakeHead;
     [SerializeField] private float _speed;
     [SerializeField] private float _offsetY;
-
-    private void FixedUpdate()
+   
+    private void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, GetTargetPosition(), _speed * Time.fixedDeltaTime);
+        transform.position = Vector3.Lerp(transform.position, GetTargetPosition(), _speed * Time.deltaTime);
     }
 
     private Vector3 GetTargetPosition()

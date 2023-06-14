@@ -2,22 +2,19 @@ using UnityEngine;
 
 public class SnakeInput : MonoBehaviour
 {
-    private Camera _camera;
-
-    private void Awake()
+    public float GetHorizontalDirection()
     {
-        _camera = Camera.main;
-    }
+        float horizontalDirection = 0f;
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
 
-    public Vector2 GetDirectionToClick(Vector2 headPosition)
-    {
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition = _camera.ScreenToViewportPoint(mousePosition);
-        mousePosition.y = 1;
-        mousePosition = _camera.ViewportToWorldPoint(mousePosition);
-
-        Vector2 direction = new Vector2(mousePosition.x - headPosition.x, mousePosition.y - headPosition.y);
-
-        return direction;
+            if (touch.phase == TouchPhase.Moved)
+            {
+                float deltaPositionX = touch.deltaPosition.x;
+                horizontalDirection = Mathf.Clamp(deltaPositionX, -1f, 1f);           
+            }
+        }
+        return horizontalDirection;
     }
 }
