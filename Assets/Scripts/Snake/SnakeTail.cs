@@ -47,8 +47,8 @@ public class SnakeTail : MonoBehaviour
 
     public void DeleteSegment()
     {
-        Segment seg = _tail[_tail.Count - 1];
-        _tail.Remove(seg);
-        Destroy(seg.gameObject);
+        Segment segment = _tail[_tail.Count - 1];
+        _tail.Remove(segment);
+        Destroy(segment.gameObject);
     }
 }
