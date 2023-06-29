@@ -340,7 +340,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _snakeHead: {fileID: 1289016941}
   _speed: 5
-  _offsetY: 0
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,8 +365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c84e915cfa9b5143afff20127d3388f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalScreenWidth: 1170
-  originalScreenHeight: 2532
+  _originalScreenWidth: 1170
+  _originalScreenHeight: 2532
 --- !u!1 &612466080
 GameObject:
   m_ObjectHideFlags: 0

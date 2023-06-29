@@ -12,6 +12,7 @@ public class SnakeHead : MonoBehaviour
 
     public event UnityAction BlockCollided;
     public event UnityAction<int> BonusCollected;
+    public event UnityAction FinishReached;
 
     private void Start()
     {
@@ -42,6 +43,11 @@ public class SnakeHead : MonoBehaviour
         if (collision.gameObject.TryGetComponent(out Bonus bonus))
         {
             BonusCollected?.Invoke(bonus.Collect());
+        }
+        if (collision.gameObject.TryGetComponent(out FinishLine finishLine))
+        {
+            FinishReached?.Invoke();
+            finishLine.PlayFinishEffect();
         }
     }
 

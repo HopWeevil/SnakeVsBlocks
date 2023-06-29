@@ -18,6 +18,8 @@ public class LevelGenerator : MonoBehaviour
     [Header("Bonus")]
     [SerializeField] private GameObject _bonusTemplate;
     [SerializeField] private int _bonusSpawnChance;
+    [Header("FinishLine")]
+    [SerializeField] private GameObject _finishLineTemplate;
     [Header("SpawnPoints")]
     [SerializeField] private Transform[] _blockSpawnPoints;
     [SerializeField] private Transform[] _wallSpawnPoints;
@@ -35,6 +37,12 @@ public class LevelGenerator : MonoBehaviour
         {
             GenerateStage();
         }
+        GenerateFinishLine();
+    }
+
+    private void GenerateFinishLine()
+    {
+        GenerateElement(transform.position, _finishLineTemplate); 
     }
 
     private void GenerateStage()

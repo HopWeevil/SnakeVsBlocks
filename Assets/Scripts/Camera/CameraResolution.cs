@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CameraResolution : MonoBehaviour
 {
-    [SerializeField] private float originalScreenWidth;
-    [SerializeField] private float originalScreenHeight;
+    [SerializeField] private float _originalScreenWidth;
+    [SerializeField] private float _originalScreenHeight;
 
     private float _desiredWidth;
     private Camera _camera;
@@ -13,7 +13,7 @@ public class CameraResolution : MonoBehaviour
     private void Awake()
     {
         _camera = Camera.main;
-        _desiredWidth = _camera.orthographicSize * (originalScreenWidth / originalScreenHeight);
+        _desiredWidth = _camera.orthographicSize * (_originalScreenWidth / _originalScreenHeight);
         _camera.orthographicSize = _desiredWidth / _camera.aspect;
     }
 }
