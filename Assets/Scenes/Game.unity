@@ -924,6 +924,7 @@ MonoBehaviour:
   _wallMaxLenth: 2
   _bonusTemplate: {fileID: 3853515483715753026, guid: 4879e8ebda9aee749850ebf6aefe1a78, type: 3}
   _bonusSpawnChance: 15
+  _finishLineTemplate: {fileID: 1771717121826624720, guid: 5aef42d115de2de469b5dcb395a3d5ae, type: 3}
   _blockSpawnPoints:
   - {fileID: 5625117151105012806}
   - {fileID: 5625117149409155813}
