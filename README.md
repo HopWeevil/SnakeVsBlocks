@@ -1,5 +1,5 @@
 # SnakeVsBlocks
-SnakeVsBlocks
+Прототип гри SnakeVsBlocks
 
 
 
