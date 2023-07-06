@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 2141677}
   - component: {fileID: 2141676}
   m_Layer: 5
-  m_Name: Button
+  m_Name: StartGameButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 67785842}
   - component: {fileID: 67785840}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: StartGameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -545,6 +545,61 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ease: 6
   _duration: 1
+--- !u!1 &115673576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 115673578}
+  - component: {fileID: 115673577}
+  m_Layer: 0
+  m_Name: Game
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &115673577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115673576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5916fe3a4441d1248b35e503bffecb47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _snake: {fileID: 1815620488}
+  _snakeHead: {fileID: 1289016941}
+  _tracker: {fileID: 519420033}
+  _levelProgress: {fileID: 645451445}
+  _levelGenerator: {fileID: 1756404228}
+  _levelCompleteScreen: {fileID: 1277924655}
+  _gameOverScreen: {fileID: 352923819}
+  _startGameScreen: {fileID: 923019009}
+  _levelTransitionScreen: {fileID: 1952869118}
+  _currentLevel: 1
+  _levelLenth: 4
+--- !u!4 &115673578
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115673576}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &152961157
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,7 +612,7 @@ GameObject:
   - component: {fileID: 152961160}
   - component: {fileID: 152961159}
   m_Layer: 5
-  m_Name: ProgressBar (1)
+  m_Name: ProgressBarBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -849,7 +904,7 @@ GameObject:
   - component: {fileID: 410047926}
   - component: {fileID: 410047925}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: GameOverText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1122,10 +1177,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: 0, g: 0.3295104, b: 0.78431374, a: 1}
-  - {r: 0.57972944, g: 0, b: 0.5849056, a: 1}
-  - {r: 0.009220327, g: 0.6981132, b: 0.37933135, a: 1}
-  - {r: 0.6037736, g: 0.052706786, b: 0.04215021, a: 1}
+  - {r: 0.40392157, g: 0.052706786, b: 0.50980395, a: 1}
+  - {r: 0.50980395, g: 0.052706786, b: 0.33333334, a: 1}
+  - {r: 0.22745098, g: 0.34117648, b: 0.06666667, a: 1}
+  - {r: 0.06666667, g: 0.34117648, b: 0.34117648, a: 1}
+  - {r: 0.4627451, g: 0.4, b: 0.25490198, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 0.3490566, g: 0.29439303, b: 0.29439303, a: 1}
 --- !u!1 &598964858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,7 +1410,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &825557537
 GameObject:
@@ -1367,7 +1425,7 @@ GameObject:
   - component: {fileID: 825557539}
   - component: {fileID: 825557541}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: LevelCompleteText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1563,7 +1621,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 923019004}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -1971,7 +2029,7 @@ GameObject:
   - component: {fileID: 1245698256}
   - component: {fileID: 1245698255}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: LevelNumberText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2464,7 +2522,7 @@ RectTransform:
   - {fileID: 1277924651}
   - {fileID: 1952869114}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2483,7 +2541,7 @@ GameObject:
   - component: {fileID: 1414502630}
   - component: {fileID: 1414502629}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: LevelNumberText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2616,7 +2674,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1756404227}
   - component: {fileID: 1756404228}
-  - component: {fileID: 1756404230}
   m_Layer: 0
   m_Name: LevelGenerator
   m_TagString: Untagged
@@ -2646,7 +2703,7 @@ Transform:
   - {fileID: 307877972}
   - {fileID: 612466081}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1756404228
 MonoBehaviour:
@@ -2688,29 +2745,6 @@ MonoBehaviour:
   - {fileID: 5625117149465986527}
   - {fileID: 5625117150028374349}
   - {fileID: 5625117150688439558}
---- !u!114 &1756404230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1756404226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5916fe3a4441d1248b35e503bffecb47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _snake: {fileID: 1815620488}
-  _snakeHead: {fileID: 1289016941}
-  _tracker: {fileID: 519420033}
-  _levelProgress: {fileID: 645451445}
-  _levelGenerator: {fileID: 1756404228}
-  _levelCompleteScreen: {fileID: 1277924655}
-  _gameOverScreen: {fileID: 352923819}
-  _startGameScreen: {fileID: 923019009}
-  _levelTransitionScreen: {fileID: 1952869118}
-  _currentLevel: 1
-  _levelLenth: 5
 --- !u!1 &1804267502
 GameObject:
   m_ObjectHideFlags: 0
@@ -2909,6 +2943,7 @@ MonoBehaviour:
   _forwardSpeed: 5
   _horizontalSpeed: 7
   _defaultTailSize: 4
+  _segmentDestroyEffect: {fileID: 1464321342580599459, guid: 1042a3c3ebbdc0840b065087b276d5d5, type: 3}
 --- !u!4 &1815620489
 Transform:
   m_ObjectHideFlags: 0
@@ -2964,7 +2999,7 @@ GameObject:
   - component: {fileID: 1912854276}
   - component: {fileID: 1912854275}
   m_Layer: 5
-  m_Name: Button
+  m_Name: GameOverButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3176,7 +3211,7 @@ GameObject:
   - component: {fileID: 2143021411}
   - component: {fileID: 2143021410}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: WelcomeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3248,7 +3283,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 97690656
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2

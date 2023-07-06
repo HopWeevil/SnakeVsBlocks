@@ -7,6 +7,7 @@ public class FadingText : MonoBehaviour
 {
     [SerializeField] private Ease _ease;
     [SerializeField] private float _duration;
+
     private TMP_Text _text;
 
     private void Start()

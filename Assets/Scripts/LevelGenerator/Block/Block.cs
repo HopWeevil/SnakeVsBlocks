@@ -11,13 +11,13 @@ public class Block : MonoBehaviour
     private int _filling;
 
     public int LeftToFill => _destroyPrice - _filling;
+    public int MaxDestroyPrice => _destroyPriceRange.y;
 
     public event UnityAction<int> FillingUpdated;
 
-    private void Start()
+    private void Awake()
     {
         _destroyPrice = Random.Range(_destroyPriceRange.x, _destroyPriceRange.y);
-        FillingUpdated?.Invoke(LeftToFill);
     }
 
     public void Fill()

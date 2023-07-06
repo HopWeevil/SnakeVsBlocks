@@ -19,7 +19,7 @@ public class Game : MonoBehaviour
     private void OnEnable()
     {
         _snakeHead.FinishReached += OnFinishReached;
-        _levelTransitionScreen.LevelTransitionComplete += OnTransitionCompleted;
+        _levelTransitionScreen.LevelTransitionComplete += OnLevelTransitionCompleted;
         _levelCompleteScreen.Closed += OnLevelCompleteScreenClosed;
         _gameOverScreen.RestartButtonClick += OnRestartButtonClick;
         _startGameScreen.StartButtonClick += OnStartButonClick;
@@ -29,7 +29,7 @@ public class Game : MonoBehaviour
     private void OnDisable()
     {
         _snakeHead.FinishReached -= OnFinishReached;
-        _levelTransitionScreen.LevelTransitionComplete -= OnTransitionCompleted;
+        _levelTransitionScreen.LevelTransitionComplete -= OnLevelTransitionCompleted;
         _levelCompleteScreen.Closed -= OnLevelCompleteScreenClosed;
         _gameOverScreen.RestartButtonClick -= OnRestartButtonClick;
         _startGameScreen.StartButtonClick -= OnStartButonClick;
@@ -86,7 +86,7 @@ public class Game : MonoBehaviour
         _levelTransitionScreen.StartTransition();
     }
 
-    private void OnTransitionCompleted()
+    private void OnLevelTransitionCompleted()
     {
         RestartGame();
     }

@@ -10,6 +10,7 @@ public class Snake : MonoBehaviour
     [SerializeField] private float _forwardSpeed;
     [SerializeField] private float _horizontalSpeed;
     [SerializeField] [Min(1)] private int _defaultTailSize;
+    [SerializeField] private ParticleSystem _segmentDestroyEffect;
 
     private SnakeInput _input;
 
@@ -54,6 +55,7 @@ public class Snake : MonoBehaviour
 
     private void OnBlockCollided()
     {
+        Instantiate(_segmentDestroyEffect, _head.transform.position, Quaternion.identity).Play();
         _snakeTail.DeleteSegment();
         SizeUpdated?.Invoke(_snakeTail.Size);
 
@@ -71,6 +73,7 @@ public class Snake : MonoBehaviour
 
     private void Die()
     {
+        Instantiate(_segmentDestroyEffect, _head.transform.position, Quaternion.identity).Play();
         Died?.Invoke();
         Destroy(gameObject);
     }
