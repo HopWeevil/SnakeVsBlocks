@@ -9,17 +9,25 @@ public class Snake : MonoBehaviour
     [SerializeField] private SnakeTail _snakeTail;
     [SerializeField] private float _forwardSpeed;
     [SerializeField] private float _horizontalSpeed;
-    [SerializeField] [Min(1)] private int _startTailSize;
+    [SerializeField] [Min(1)] private int _defaultTailSize;
 
     private SnakeInput _input;
 
+    public int DefaultTailSize => _defaultTailSize;
+    public int CurrentSize => _snakeTail.Size;
+
     public event UnityAction<int> SizeUpdated;
+    public event UnityAction Died;
 
     private void Start()
     {
         _input = GetComponent<SnakeInput>();
-        _snakeTail.AddSegments(_startTailSize);
-        SizeUpdated?.Invoke(_snakeTail.Size);
+    }
+
+    public void Initializate(int snakeSize)
+    {
+        _snakeTail.AddSegments(snakeSize);
+        SizeUpdated?.Invoke(snakeSize);
     }
 
     private void OnEnable()
@@ -48,11 +56,22 @@ public class Snake : MonoBehaviour
     {
         _snakeTail.DeleteSegment();
         SizeUpdated?.Invoke(_snakeTail.Size);
+
+        if (_snakeTail.Size == 0)
+        {
+            Die();
+        }
     }
 
     private void OnBonusCollected(int bonusSize)
     {
         _snakeTail.AddSegments(bonusSize);
         SizeUpdated?.Invoke(_snakeTail.Size);
+    }
+
+    private void Die()
+    {
+        Died?.Invoke();
+        Destroy(gameObject);
     }
 }

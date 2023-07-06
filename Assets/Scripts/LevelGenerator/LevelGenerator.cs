@@ -24,16 +24,9 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private Transform[] _blockSpawnPoints;
     [SerializeField] private Transform[] _wallSpawnPoints;
     [SerializeField] private Transform[] _bonusSpawnPoints;
-
-    private void Awake()
+    public void Generate(int levelLenth)
     {
-        Generate();
-    }
-
-    [ContextMenu("Generate")]
-    public void Generate()
-    {
-        for (int i = 0; i < _levelLenth; i++)
+        for (int i = 0; i < levelLenth; i++)
         {
             GenerateStage();
         }
